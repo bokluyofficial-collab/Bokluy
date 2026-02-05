@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bokluy – Mobile Legends Top Up</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body class="topup-body">
+  <!-- Top Bar -->
+  <header class="topup-header">
+    <div class="topup-header-left">
+      <div class="topup-brand">
+        <span class="topup-brand-dot">B</span>
+        <span class="topup-brand-text">Bokluy</span>
+      </div>
+      <div class="topup-game-pill">Mobile Legends</div>
+    </div>
+
+    <div class="topup-header-right">
+      <a class="topup-header-btn" href="./home.html">Home</a>
+      <a class="topup-header-btn" href="./index.html">Marketplace</a>
+    </div>
+  </header>
+
+  <!-- Page Wrapper (NO PAGE SCROLL) -->
+  <main class="topup-wrap">
+    <!-- Banner -->
+    <section class="topup-banner">
+      <img src="./images/placeholder.png" alt="MLBB banner" />
+      <div class="topup-banner-overlay">
+        <div class="topup-banner-title">MLBB Top Up</div>
+        <div class="topup-banner-sub">Fast • Secure • Manual Verification</div>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="topup-content">
+
+      <!-- Step 1: Player Info -->
+      <div class="topup-card">
+        <div class="topup-card-head">
+          <div class="topup-step">1</div>
+          <div class="topup-card-title">Player Info</div>
+        </div>
+
+        <div class="topup-form">
+          <input id="mlbbUserId" class="topup-input" placeholder="User ID" inputmode="numeric" />
+          <input id="mlbbServerId" class="topup-input" placeholder="Server ID" inputmode="numeric" />
+
+          <button id="btnCheckName" class="topup-primary-btn" type="button">
+            Submit & Check Username
+          </button>
+
+          <div id="nameStatus" class="topup-status"></div>
+          <div id="playerNameBox" class="topup-player-name" style="display:none;">
+            Username: <span id="playerNameValue"></span>
+          </div>
+
+          <div class="topup-hint">
+            Please double-check ID/Server. Wrong info may be non-refundable.
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2: Products (ONLY THIS SCROLLS) -->
+      <div class="topup-card">
+        <div class="topup-card-head">
+          <div class="topup-step">2</div>
+          <div class="topup-card-title">Select Package</div>
+        </div>
+
+        <div class="topup-products-shell">
+          <div class="topup-products-scroll" id="productsScroll">
+            <!-- Products injected by mlbb.js -->
+          </div>
+        </div>
+
+        <div class="topup-mini-note">
+          Scroll inside the package box to see more.
+        </div>
+      </div>
+
+      <!-- Step 3: Payment Method + Terms -->
+      <div class="topup-card">
+        <div class="topup-card-head">
+          <div class="topup-step">3</div>
+          <div class="topup-card-title">Payment</div>
+        </div>
+
+        <div class="topup-paybox">
+          <div class="topup-pay-row">
+            <div class="topup-pay-logos">
+              <img class="topup-pay-logo" src="./images/aba.svg" alt="ABA" />
+              <img class="topup-pay-logo" src="./images/khqr.svg" alt="KHQR" />
+            </div>
+            <button id="btnPay" class="topup-pay-btn" type="button" disabled>
+              Pay with ABA / KHQR
+            </button>
+          </div>
+
+          <label class="topup-terms">
+            <input id="agreeTerms" type="checkbox" />
+            <span>
+              I agree to
+              <a href="./terms.html" target="_blank" rel="noopener">Terms &amp; Conditions</a>
+              and
+              <a href="./refund.html" target="_blank" rel="noopener">Refund Policy</a>
+            </span>
+          </label>
+
+          <div id="payStatus" class="topup-status"></div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Bottom Bar -->
+  <footer class="topup-bottom">
+    <div class="topup-total">
+      <div class="topup-total-label">Total</div>
+      <div class="topup-total-value" id="totalPrice">$0.00</div>
+    </div>
+
+    <button id="btnNext" class="topup-next-btn" type="button" disabled>
+      Next
+    </button>
+  </footer>
+
+  <script type="module" src="./mlbb.js"></script>
+
+</body>
+</html>

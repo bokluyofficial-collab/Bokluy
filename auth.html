@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Auth</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./auth.css" />
+</head>
+<body>
+
+<div class="auth-wrapper">
+  <div class="auth-card">
+
+    <div class="auth-header">
+      <button class="back-btn" onclick="window.location.href='index.html'">←</button>
+      <h1 id="form-title">Login</h1>
+      <p class="subtitle" id="form-subtitle">
+        Login to continue using your account
+      </p>
+    </div>
+    <button id="googleLoginBtn" class="btn btn-primary" type="button">
+  Continue with Google
+</button>
+
+
+    <!-- Tabs -->
+    <div class="auth-tabs">
+      <button id="login-tab" class="tab active" type="button">Login</button>
+      <button id="register-tab" class="tab" type="button">Register</button>
+    </div>
+
+    <!-- Form -->
+    <div class="auth-form">
+
+      <!-- REGISTER ONLY -->
+      <div id="register-only" style="display:none;">
+        <label>Display name</label>
+        <input id="register-name" placeholder="e.g. gamer123" />
+      </div>
+
+      <label>Email</label>
+      <input id="auth-email" type="email" placeholder="example@email.com" />
+
+      <label>Password</label>
+      <input id="auth-password" type="password" placeholder="••••••••" />
+
+      <!-- (Optional UI only) Fake captcha box, does nothing -->
+      <div class="captcha-box">
+        <input type="checkbox" />
+        <span>I’m not a robot</span>
+        <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png" />
+      </div>
+
+      <button id="submit-btn" class="primary-btn" type="button">
+        Login
+      </button>
+
+      <p id="message" class="message"></p>
+    </div>
+
+  </div>
+</div>
+
+<script type="module" src="./supabase/auth.js"></script>
+</body>
+</html>
