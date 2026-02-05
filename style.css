@@ -2177,3 +2177,51 @@ header .nav-buttons{
   opacity: .45;
   cursor: not-allowed;
 }
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden; /* page itself won't scroll */
+}
+
+/* Whole MLBB page takes the full screen */
+.mlbb-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header / form area stays fixed */
+.mlbb-top {
+  flex: 0 0 auto;
+}
+
+/* Bottom area: products panel fills remaining space */
+.mlbb-bottom {
+  flex: 1 1 auto;
+  min-height: 0; /* IMPORTANT: allows inner scrolling in flex */
+  display: flex;
+  gap: 16px;
+}
+
+/* Example: left column (inputs/summary) */
+.mlbb-side {
+  flex: 0 0 360px; /* change width as you want */
+  overflow: hidden;
+}
+
+/* Right column (products) */
+.mlbb-products {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0; /* IMPORTANT */
+  overflow: hidden;
+}
+
+/* This is the scrollable area */
+.mlbb-products-scroll {
+  height: 100%;
+  overflow-y: auto;
+  overscroll-behavior: contain; /* prevents "scroll chaining" */
+  -webkit-overflow-scrolling: touch;
+  padding-right: 6px; /* optional */
+}
