@@ -1503,3 +1503,73 @@ header .nav-buttons{
   color: rgba(255,255,255,.92);
   padding: 9px 10px;
 }
+/* =========================================
+   Compact Search + Filters (less height)
+   ========================================= */
+.search-section{
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 16px;
+}
+
+.search-section .search-header{
+  margin-bottom: 10px;
+}
+
+.search-section .section-title{
+  margin: 0 0 2px;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.search-section .section-subtitle{
+  margin: 0 0 10px;
+  font-size: 13px;
+  opacity: .85;
+}
+
+.search-bar{
+  padding: 12px 14px 12px 44px; /* shorter input */
+  font-size: 14px;
+  border-radius: 12px;
+}
+
+.search-bar-container{
+  margin-bottom: 10px;
+}
+
+/* Filters: more columns = less vertical height */
+.filters{
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+/* tighter label/input spacing */
+.filter-group{
+  gap: 4px;
+}
+
+.filter-group label{
+  font-size: 12px;
+  opacity: .9;
+}
+
+/* Remove "Sort spans full width" so it doesn't add extra row */
+.filter-group:last-child{
+  grid-column: auto;
+}
+
+/* Medium screens: 2 columns */
+@media (max-width: 980px){
+  .filters{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Small screens: 1 column */
+@media (max-width: 720px){
+  .filters{
+    grid-template-columns: 1fr;
+  }
+}
+
